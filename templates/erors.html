@@ -1,0 +1,28 @@
+{%extends 'base.html'%}
+
+{%block title%}
+Error page
+
+{%endblock%}
+{%block content%}
+
+<h1>ТЫ ТУПОЙ ЕБЛАН НАХУЙ ТЫ ЭТО СДЕЛАЛ</h1>
+<h1>ВОТ ТВОЯ ОШИБКА. СИДИ ЕБАТЬ РАЗБИРАЙСЯ ЕБЛАН</h1>
+<div class="smeshnyavka_div">
+    <img class="smeshnyavka_img" src="{{ url_for('static',filename='/img/smeshnyavka.jpg') }}" alt="smeshnyavka"> 
+</div>
+<style>
+    .smeshnyavka_img{
+    height: 500px;
+    width: 1000px;
+    border: 3px;
+    border-radius: 4px;
+}
+.smeshnyavka_div{
+    display: flex;
+    justify-content: center;
+}
+
+</style>
+<h1>{{data}}</h1>
+{%endblock%}

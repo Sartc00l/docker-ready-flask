@@ -1,8 +1,28 @@
 {%extends 'base.html'%}
-{%block title%}
-pizdato
-{%endblock%}
 
+{%block title%}
+Pizdato
+{%endblock%}
 {%block content%}
-<h1>pizdato</h1>
+
+
+<div class="pizdato_div">
+    <img class="pizdato_img" src="{{ url_for('static',filename='/img/pizdato.jpg') }}" alt="pizdato"> 
+<h1>МОЛОДЕЦ ВСЕ СДЕЛАЛ ВЕРНО!!!</h1>
+<h1>ДАННЫЕ ВВЕДЕНЫ!!</h1>
+</div>
+<style>
+    .pizdato_img{
+    height: 500px;
+    width: 1000px;
+    border: 3px;
+    border-radius: 4px;
+}
+.pizdato_div{
+    display: grid;
+    justify-content: center;
+}
+
+</style>
+
 {%endblock%}

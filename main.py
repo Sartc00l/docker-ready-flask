@@ -1,8 +1,9 @@
 from flask import Flask,render_template,request,redirect
-from flask_sqlalchemy import SQLAlchemy
+from flask_sqlalchemy import SQLAlchemy 
+import sqlalchemy.exc
 import os
 
-
+    
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///newflask.db'
 app.config['SQLACHEMY_TRACK-_MODIFICATIONS'] = False
@@ -23,7 +24,8 @@ def index():
 
 @app.route("/posts")
 def posts():
-    return render_template("posts.html")
+    posts = Post.query.all()
+    return render_template("posts.html",posts=posts)
 
 @app.route("/about")
 def about():
@@ -33,6 +35,7 @@ def about():
 @app.route("/pizdato")
 def pizdato():
     return render_template("pizdato.html")
+
 
 @app.route("/create",methods=['POST','GET'])
 def create():
@@ -48,8 +51,8 @@ def create():
             db.session.add(post)
             db.session.commit()
             return redirect('/pizdato')
-        except:
-            return "DOLBAEB!"
+        except sqlalchemy.exc.OperationalError as e: 
+            return render_template('erors.html',data=e)
     else:
         return render_template("create.html")
 
