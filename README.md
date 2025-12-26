@@ -1,2 +1,1 @@
-# 1h-site
- learning flask
+A small docker ready flask app 
