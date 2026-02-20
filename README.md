@@ -1,2 +1,1 @@
-First docker-ready flask app
-Education project
+First docker-ready flask app.Education project
