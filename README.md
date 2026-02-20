@@ -1,1 +1,2 @@
-A small docker ready flask app 
+First docker-ready flask app
+Education project
